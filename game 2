@@ -25,7 +25,7 @@ right_pad.shapesize(stretch_wid=6, stretch_len=2)
 right_pad.penup()
 right_pad.goto(400, 0)
 
-# ボールの表示
+# ボールを表示
 hit_ball = turtle.Turtle()
 hit_ball.speed(40)
 hit_ball.shape("circle")
@@ -35,11 +35,11 @@ hit_ball.goto(0, 0)
 hit_ball.dx = 5
 hit_ball.dy = -5
 
-# 点数初期値
+# 点数を初期値
 left_player = 0
 right_player = 0
 
-# 点数表示
+# 点数の表示
 sketch = turtle.Turtle()
 sketch.speed(0)
 sketch.color("blue")
@@ -52,20 +52,20 @@ sketch.write("左のプレーヤー : 0 右のプレーヤー: 0",
 # 左側のバーの動き
 def paddleaup():
     y = left_pad.ycor()
-    if y < 250:  # バーが画面上端を越えないように制限
+    if y < 250:  # バーが画面上端を越えないように制限させる
         y += 20
     left_pad.sety(y)
 
 def paddleadown():
     y = left_pad.ycor()
-    if y > -240:  # バーが画面下端を越えないように制限
+    if y > -240:  # バーが画面下端を越えないように制限させる
         y -= 20
     left_pad.sety(y)
 
 # 右側のバーの動き
 def paddlebup():
     y = right_pad.ycor()
-    if y < 250:
+    if y < 250:　# 上と同じく
         y += 20
     right_pad.sety(y)
 
@@ -75,7 +75,7 @@ def paddlebdown():
         y -= 20
     right_pad.sety(y)
 
-# キーボード操作の情報
+# キーボード操作のボタン
 sc.listen()
 sc.onkeypress(paddleaup, "e")
 sc.onkeypress(paddleadown, "x")
@@ -120,7 +120,7 @@ while True:
             font=("Courier", 24, "normal")
         )
 
-    # バーへの衝突判定
+    # バーへの衝突判定を決める
     if (hit_ball.xcor() > 360 and hit_ball.xcor() < 370) and (hit_ball.ycor() < right_pad.ycor() + 40 and hit_ball.ycor() > right_pad.ycor() - 40):
         hit_ball.setx(360)
         hit_ball.dx *= -1
