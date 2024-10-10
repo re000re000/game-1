@@ -72,8 +72,8 @@ def paddlebdown():
 
 #キーボード操作の情報
 sc.listen()
-sc.onkeypress(paddleaup, "e")
-sc.onkeypress(paddleadown, "x")
+sc.onkeypress(paddleaup, "w")
+sc.onkeypress(paddleadown, "c")
 sc.onkeypress(paddlebup, "Up")
 sc.onkeypress(paddlebdown, "Down")
 
